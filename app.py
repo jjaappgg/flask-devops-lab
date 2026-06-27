@@ -50,6 +50,7 @@ def status():
     cfg = load_config()
     routes = sorted(str(rule) for rule in app.url_map.iter_rules())
     return jsonify({
+	'status': 'ok',
         'app_name': cfg['app_name'],
         'version': cfg['version'],
         'routes': routes
